@@ -95,7 +95,7 @@ router.post("/login", (req, res, next) => {
       // if there's a user, compare provided password
       // with the hashed password saved in the database
       else if (bcryptjs.compareSync(password, user.passwordHash)) {
-        // if the two passwords match, render the userProfile.hbs and
+        // if the two passwords match, render the user-profile.hbs and
         //                   pass the user object to this view
         //                                 |
         //                                 V
