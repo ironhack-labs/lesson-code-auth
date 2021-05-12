@@ -9,7 +9,7 @@ const saltRounds = 10;
 
 const User = require("../models/User.model");
 
-// require auth middleware
+// require (import) middleware functions
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
 // GET route ==> to display the signup form to users
