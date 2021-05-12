@@ -85,6 +85,7 @@ ul li {
 }
 
 #form h2 {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -97,4 +98,12 @@ ul li {
   color: #000;
   font-weight: bold;
   font-size: 2em;
+}
+
+#logout-form {
+  display: inline;
+}
+
+#logout-form button {
+  width: 120px;
 }
