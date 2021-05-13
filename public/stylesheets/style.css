@@ -98,3 +98,11 @@ ul li {
   font-weight: bold;
   font-size: 2em;
 }
+
+#logout-form {
+  display: inline;
+}
+
+#logout-form button {
+  width: 120px;
+}
