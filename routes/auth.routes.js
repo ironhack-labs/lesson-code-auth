@@ -59,7 +59,7 @@ router.post("/signup", (req, res, next) => {
         res.status(500).render("auth/signup", { errorMessage: error.message });
       } else if (error.code === 11000) {
         res.status(500).render("auth/signup", {
-          errorMessage: "Username and email need to be unique. Either username or email is already used."
+          errorMessage: "User not found and/or incorrect password."
         });
       } else {
         next(error);
@@ -89,7 +89,7 @@ router.post("/login", (req, res, next) => {
       // <== "user" here is just a placeholder and represents the response from the DB
       if (!user) {
         // <== if there's no user with provided email, notify the user who is trying to login
-        res.render("auth/login", { errorMessage: "Email is not registered. Try with other email." });
+        res.render("auth/login", { errorMessage: "User not found and/or incorrect password." });
         return;
       }
       // if there's a user, compare provided password
@@ -110,7 +110,7 @@ router.post("/login", (req, res, next) => {
       } else {
         // if the two passwords DON'T match, render the login form again
         // and send the error message to the user
-        res.render("auth/login", { errorMessage: "Incorrect password." });
+        res.render("auth/login", { errorMessage: "User not found and/or incorrect password." });
       }
     })
     .catch((error) => next(error));
